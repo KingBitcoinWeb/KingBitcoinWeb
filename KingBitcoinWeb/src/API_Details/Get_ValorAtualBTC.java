@@ -5,6 +5,6 @@ import java.io.Console;
 public class Get_ValorAtualBTC {
 	
 	public void test() {
-		System.out.println("Hello, world");		
+		System.out.println("Quauqaishahusa");		
 	}
 }
