@@ -1,22 +1,21 @@
 package API_Details;
 
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 
-public class Get_ValorAtualBTC {
-	
+public class FAB_Get_ValorAtual_BTC {
+
 	public static void main(String[] args) {
         try {
-            String url = "https://opensky-network.org/api/states/all?lamin=45.8389&lomin=5.9962&lamax=47.8229&lomax=10.5226";
+            String url = "https://www.mercadobitcoin.net/api/BTC/ticker/";
 
             HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 
@@ -31,20 +30,21 @@ public class Get_ValorAtualBTC {
 
             String output = "";
             String line;
-            while ((line = br.readLine()) == null) {
+            while ((line = br.readLine()) != null) {
                 output += line;
             }
 
             conn.disconnect();
 
             Gson gson = new Gson();
-            Dados dados = gson.fromJson(new String(output.getBytes()), Dados.class);
-
-            System.out.println("TIME teste: " + dados.getTime());
-            System.out.println("STATES: " + Arrays.toString(dados.getStates()[0]));
+            DadosBTC dadosBTC = gson.fromJson(new String(output.getBytes()),DadosBTC.class);
+            		//), DadosBTC.class);
+            
+            System.out.println("Valor BTC: " + dadosBTC.getBuy());
 
         } catch (IOException ex) {
-            Logger.getLogger(Get_ValorAtualBTC.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FAB_Get_ValorAtual_BTC.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 }
