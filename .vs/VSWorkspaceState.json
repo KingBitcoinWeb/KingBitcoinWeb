@@ -3,9 +3,8 @@
     "",
     "\\KingBitcoinWeb",
     "\\KingBitcoinWeb\\src",
-    "\\KingBitcoinWeb\\src\\API_Details",
-    "\\KingBitcoinWeb\\src\\Bibliotecas"
+    "\\KingBitcoinWeb\\src\\API_Details"
   ],
-  "SelectedNode": "\\KingBitcoinWeb\\src\\API_Details\\Class1.cs",
+  "SelectedNode": "\\KingBitcoinWeb\\src\\API_Details\\Post.cs",
   "PreviewInSolutionExplorer": false
 }

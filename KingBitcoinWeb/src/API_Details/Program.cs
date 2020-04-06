@@ -6,16 +6,15 @@ using System.Text;
 
 public class Class1
 {
-
     static void Main(string[] args)
     {
-        //EnviaRequisicaoGET();
-        EnviaRequisicaoPOST();
+        EnviaRequisicaoGET();
+        //EnviaRequisicaoPOST();
     }
 
     public static void EnviaRequisicaoGET()
     {
-        var requisicaoWeb = WebRequest.CreateHttp("http://jsonplaceholder.typicode.com/posts/1");
+        var requisicaoWeb = WebRequest.CreateHttp("https://www.mercadobitcoin.net/api/BTC/ticker/");
         requisicaoWeb.Method = "GET";
         requisicaoWeb.UserAgent = "RequisicaoWebDemo";
 
